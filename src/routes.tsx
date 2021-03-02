@@ -1,20 +1,17 @@
-import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './Pages/Home';
-import DetailedDrink from './Pages/DetailedDrink';
+import Launches from './Pages/Launches';
 
 function Routes() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/drink/:id" exact component={DetailedDrink} />
+        <Route path="/launches" exact component={Launches} />
       </Switch>
     </BrowserRouter>
   );
 }
-
-// igonre
 
 export default Routes;
