@@ -18,8 +18,7 @@ export const Container = styled.div`
       width: 240px;
       margin: 20px;
       justify-content: center;
-      background: ${(props) =>
-        props.theme.mode === 'dark' ? 'hsl(209, 23%, 22%)' : '#ddd'};
+      background: #ddd;
       img {
         width: 100%;
         height: 150px;
@@ -27,21 +26,14 @@ export const Container = styled.div`
         margin-bottom: auto;
       }
       h3 {
-        color: ${(props) =>
-          props.theme.mode === 'dark'
-            ? 'hsl(0, 0%, 100%)'
-            : 'hsl(200, 15%, 8%)'};
+        color: hsl(200, 15%, 8%);
         margin: 10px 0;
       }
       strong {
         padding-bottom: 10px;
-        color: ${(props) =>
-          props.theme.mode === 'dark'
-            ? 'hsl(0, 0%, 100%)'
-            : 'hsl(200, 15%, 8%)'};
+        color: hsl(200, 15%, 8%);
         span {
-          color: ${(props) =>
-            props.theme.mode === 'dark' ? '#ccc' : 'hsl(200, 15%, 8%)'};
+          color: hsl(200, 15%, 8%);
         }
       }
     }

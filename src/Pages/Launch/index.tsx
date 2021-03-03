@@ -14,7 +14,7 @@ interface ID {
 
 function Launch() {
   const [loading, setLoading] = useState(false);
-  const [launchData, setLaunchData] = useState({});
+  const [launch, setLaunch] = useState({});
   const { id } = useParams<ID>();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function Launch() {
       await api
         .get(`/launches/${id}`)
         .then((response) => {
-          setLaunchData(response.data);
+          setLaunch(response.data);
           setLoading(false);
         })
         .catch((error) => {
@@ -34,18 +34,12 @@ function Launch() {
     getData();
   }, [id]);
 
-  console.log(launchData);
+  console.log(launch);
 
   return (
     <Container>
       <Header />
-      {/* {loading ? (
-        <AiOutlineLoading3Quarters />
-      ) : (
-        {
-          <LaunchCard launch={launchData} />
-        }
-      )} */}
+      {loading ? <AiOutlineLoading3Quarters /> : <LaunchCard launch={launch} />}
     </Container>
   );
 }
