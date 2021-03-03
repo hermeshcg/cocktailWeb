@@ -7,11 +7,14 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 16px 16px;
-  background: #007bff;
+  background: none;
   position: sticky;
   top: 0;
 
   aside {
+    border: 1px solid #cfcfcf;
+    border-radius: 8px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,6 +25,13 @@ export const Container = styled.div`
     }
     a:hover {
       text-decoration: underline;
+    }
+    transition: 500ms;
+  }
+  aside:hover {
+    background: #cfcfcf;
+    a {
+      color: #121212;
     }
   }
 `;

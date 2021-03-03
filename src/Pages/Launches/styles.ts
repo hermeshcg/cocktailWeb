@@ -7,7 +7,11 @@ export const Container = styled.div`
   flex-direction: column;
   min-height: 100vh;
   min-width: 100vw;
-  background: #005288;
+  background-image: url('https://images7.alphacoders.com/100/thumb-1920-1007355.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 
   .loading {
     margin: 100px;

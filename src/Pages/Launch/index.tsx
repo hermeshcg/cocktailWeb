@@ -39,11 +39,13 @@ function Launch() {
   return (
     <Container>
       <Header />
-      {loading ? (
+      {/* {loading ? (
         <AiOutlineLoading3Quarters />
       ) : (
-        <LaunchCard launch={launchData} />
-      )}
+        {
+          <LaunchCard launch={launchData} />
+        }
+      )} */}
     </Container>
   );
 }
