@@ -11,11 +11,6 @@ export const Container = styled.div`
   position: sticky;
   top: 0;
 
-  h1 {
-    margin: 0 24px;
-    color: #fff;
-  }
-
   aside {
     display: flex;
     align-items: center;

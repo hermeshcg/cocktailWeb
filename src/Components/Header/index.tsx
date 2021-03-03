@@ -6,7 +6,17 @@ import { Container } from './styles';
 const Header: React.FC = () => {
   return (
     <Container>
-      <h1>Spacex launchs data</h1>
+      <Link
+        to="/"
+        style={{
+          margin: '0 24px',
+          color: '#fff',
+          fontSize: '26px',
+          textDecoration: 'none',
+        }}
+      >
+        Spacex launchs data
+      </Link>
       <aside>
         <Link to="/launches">Launches</Link>
       </aside>

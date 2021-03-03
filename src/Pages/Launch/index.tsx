@@ -1,43 +1,51 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from './styles';
 import { AiOutlineLoading3Quarters } from 'react-icons/ai';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
-
 import Header from '../../Components/Header';
-import LaunchesCard from '../../Components/LaunchesCard';
+import LaunchCard from '../../Components/LaunchCard';
 import api from '../../services/api';
 
-function Launches() {
-  const [launches, setLaunches] = useState([]);
+import { Container } from './styles';
+
+interface ID {
+  id: string;
+}
+
+function Launch() {
   const [loading, setLoading] = useState(false);
+  const [launchData, setLaunchData] = useState({});
+  const { id } = useParams<ID>();
 
   useEffect(() => {
     setLoading(true);
     async function getData() {
       await api
-        .get('/launches')
+        .get(`/launches/${id}`)
         .then((response) => {
-          setLaunches(response.data);
+          setLaunchData(response.data);
           setLoading(false);
         })
         .catch((error) => {
-          setLoading(false);
-          toast.error('Error ');
+          console.log(error);
+          toast.error('Error 400, data not found');
         });
     }
     getData();
-  }, []);
+  }, [id]);
+
+  console.log(launchData);
 
   return (
     <Container>
       <Header />
       {loading ? (
-        <AiOutlineLoading3Quarters className="loading" size={36} />
+        <AiOutlineLoading3Quarters />
       ) : (
-        <LaunchesCard launches={launches} />
+        <LaunchCard launch={launchData} />
       )}
     </Container>
   );
 }
 
-export default Launches;
+export default Launch;
