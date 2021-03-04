@@ -7,7 +7,7 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
   }
-  h1,p,a,span,strong{
+  h1,p,a,span,strong, li, ul{
     font-family: Roboto, sans-serif;
   }
 `;

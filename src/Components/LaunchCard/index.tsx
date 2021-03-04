@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container } from './styles';
 
-interface Launch {
+/* interface Launch {
   launch: {
     fairings: {
       reused: boolean;
@@ -33,12 +33,26 @@ interface Launch {
       }
     ];
   };
-}
+}*/
 
-function LaunchCard(launch: Launch) {
+function LaunchCard(launch: any) {
   return (
     <Container>
       <h1>{launch.launch.name}</h1>
+      <div className="photos">
+        <ul>
+          Images
+          {launch.launch.links.flickr.original.map(
+            (photo: string, index: number) => (
+              <li>
+                <a href={photo} target="_blank" rel="noopener noreferrer">
+                  See image {index + 1}
+                </a>
+              </li>
+            )
+          )}
+        </ul>
+      </div>
     </Container>
   );
 }
